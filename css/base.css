@@ -9,7 +9,9 @@
 .menu .hide{
 	display:none;
 }
-
+button{
+	size : 20px;
+}
 body{
 	padding: 10px;
 	font-family: Gulim;
@@ -31,11 +33,12 @@ body{
 }
 .nav{
 	overflow: hidden;
-	background-color: #b70202; 
+	background-color: #BBDEFB; 
 }
 .nav-left a{
 	float: left;
-	color: #ffffff;
+	font-size : 18px;
+	color: #000000;
 	text-align: center;
 	padding: 12px 12px;
 	text-decoration: none;
