@@ -1,3 +1,15 @@
+<?php
+$con = mysqli_connect('localhost', 'root', 'Wotjd@487', 'sqlDB') or die ('데이터베이스 연결에 문제가 있습니다.\n관리자에게 문의 바랍니다.');
+$sql = "select * from board";
+$ret = mysqli_query($con,$sql);
+
+
+if(mysqli_connect_error($con)){
+    echo "오류원인 : ",mysqli_connect_error();
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
