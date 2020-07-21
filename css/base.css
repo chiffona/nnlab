@@ -59,12 +59,12 @@ body{
 	width:10%;
 }
 .middle{
-	float: left;
+	float: middle;
 	width:75%;
 	padding-left: 20px;
 }
 .right{
-	float: left;
+	float: right;
 	width: 15%;
 	bakcgroun-color: #eee;
 	padding-left: 20px;
