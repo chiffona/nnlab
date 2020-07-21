@@ -49,14 +49,29 @@
 				<p> 내용 내용 </p>
 			</div>
 			<div class="card">
-				<h2>게시판2</h2>
-				<!--<h5>Last check 2020-06-10 15:49</h5>
-				<div class="fakeimg">
-					<img src="../material/images/grass/main_image.jpg" height="100" alt="main menu picture"></div>
-				-->
-				<h5>게시판2</h5>
-				<p> 두번째 내용 </p>
-				<p> 내용 내용 </p>
+					<?php
+					echo "<h1> 게시판이 </h1>";
+					echo "<table border=1>";
+					echo "<tr>";
+                    echo "<th>제목</th><th>작성자</th><th>게시일</th><th>수정</th><th>삭제</th>"; // 목차
+                    echo "</tr>";
+                    
+                    while($row = mysqli_fetch_array($ret)) {
+                        echo "<tr>";
+                       
+                        echo "<td>","<a href='Content.php'>", $row['TITLE'],"</a></td>";
+                        // echo "<td>",$row['CONTENT'], "</td>";  제목을 클릭하면 내용 확인
+                        echo "<td>",$row['userID'], "</td>";
+                        echo "<td>",$row['DATE'], "</td>";
+                        echo "<td>", "<a href='update.php?userID=>", $row['userID'], "'>수정</a></td>";
+                        echo "<td>", "<a href='delete.php?userID=>", $row['userID'], "'>삭제</a></td>";
+                        echo "</tr>";
+                    }
+                    mysqli_close($con);
+					echo "</table>";
+					echo "<br> <a href='hoseomain.html'> <--초기화면</a> ";
+					echo "<br> <a href='upboard.php'> 글 쓰기</a> ";
+					?>
 			</div>
 		</div>
 	<!-- side content-->
