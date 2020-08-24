@@ -1,114 +1,27 @@
-<?php
-$con = mysqli_connect('localhost', 'root', 'Wotjd@487', 'sqlDB') or die ('데이터베이스 연결에 문제가 있습니다.\n관리자에게 문의 바랍니다.');
-$sql = "select * from board";
-$ret = mysqli_query($con,$sql);
-
-
-if(mysqli_connect_error($con)){
-    echo "오류원인 : ",mysqli_connect_error();
-    exit();
-}
-?>
-
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-	<meta charset="UTF-8">
-	<link  href="../css/base.css" media="only screen and (min-width : 513px)" rel="stylesheet">
-	<link href="../css/mobile.css" media="only screen and (max-width: 512px)" rel="stylesheet">
-	<title>No Name Labatory - Board</title>
-	<style></style>
-</head>
-<!--팝업 페이지 출력-->
-	<!--<body onload="window.open('../etc/popup/testpage_popup_1.html','testpage_popup_1')">-->
-<body>
-	<div class="header">
-		<a href="https://chiffona.github.io/nnlab/labatory/index"><h1>No Name Lab</h1></a>
-		</h1>
-		<p>Welcome</p>
-	</div>
-	<!--navigator-->
-	<div class="nav">
-		<div class="nav-left">
-			<a href="index" title="Home">홈</a>
-			<a href="lab" title="About Labatory">연구실에 대해서</a>
-			<a href="member" title="Labatory Member">연구실 인원</a>
-			<a href="attendance" title="Attendance Book">출퇴근 여부</a>
-			<a href="board" title="Board">게시판</a>
+	<head>
+		<meta charset="UTF-8">
+		<link href="test1.css" media="only screen" rel="stylesheet">
+		<title>Main Page - N.N. Labatory</title>
+		<style></style>
+	</head>
+	<body>
+		<div class = "nav">
+			nav
 		</div>
-		<div class="nav-right">
-			<a href="http://www.hoseo.ac.kr" title="Hoseo University"> <img src="../material/images/main/hoseo_logo.gif" height="20" alt="Hoseo University"></a>
-		</div>
-	</div>
-	<!-- main content-->
-	<div class="row">
-		<div class="left">
-			<div class="card">
-				<h2>메뉴</h2>
-				<a href="">메뉴1</a>
-				<div class="fakeimg" style="height:200px;">dafadsf</div>
+		<div class = "header">
+			<div class = "header-left">
+			n.n lab(header left)
 			</div>
 		</div>
-		<div class="middle">
-			<div class="card">
-				<h2>게시판1</h2>
-				<!--<h5>Last check 2020-06-10 15:49</h5>
-				<div class="fakeimg" style="height:200px;">
-					<img src="../material/images/grass/main_image.jpg" height="100" alt="main menu picture"></div>
-				-->
-				<h5>게시판1</h5>
-				<p> 첫번째 내용 </p>
-				<p> 내용 내용 </p>
-			</div>
-			<div class="card">
-					<?php
-					echo "<h1> 게시판이 </h1>";
-					echo "<table border=1>";
-					echo "<tr>";
-                    echo "<th>제목</th><th>작성자</th><th>게시일</th><th>수정</th><th>삭제</th>"; // 목차
-                    echo "</tr>";
-                    
-                    while($row = mysqli_fetch_array($ret)) {
-                        echo "<tr>";
-                       
-                        echo "<td>","<a href='Content.php'>", $row['TITLE'],"</a></td>";
-                        // echo "<td>",$row['CONTENT'], "</td>";  제목을 클릭하면 내용 확인
-                        echo "<td>",$row['userID'], "</td>";
-                        echo "<td>",$row['DATE'], "</td>";
-                        echo "<td>", "<a href='update.php?userID=>", $row['userID'], "'>수정</a></td>";
-                        echo "<td>", "<a href='delete.php?userID=>", $row['userID'], "'>삭제</a></td>";
-                        echo "</tr>";
-                    }
-                    mysqli_close($con);
-					echo "</table>";
-					echo "<br> <a href='hoseomain.html'> <--초기화면</a> ";
-					echo "<br> <a href='upboard.php'> 글 쓰기</a> ";
-					?>
+		<div class = "center">
+			center
+		</div>
+		<div class = "footer">
+			<div class = "copyright">
+				copyright
 			</div>
 		</div>
-	<!-- side content-->
-		<div class="right">
-			<div class="card">
-				<h2>공지사항</h2>
-				<!--<div class="fakeimg">
-					<img src="../material/images/heimdal/heimdal_01.jpg" height="100" alt="main menu picture"></div>
-				-->
-				<p>우리 랩실에도 드디어 <span style="background-color:red">홈페이지</span>가 생겼어요!</p>
-				<p>아직 미완성이에요!</p>
-				<p>김재성 - 학교로 올것</p>
-			</div>
-		</div>
-	</div>
-	<!-- footer -->
-	<div class="footer">
-		<span class="copyrightimg" style="height:100px;">
-			<img src="../material/images/etc/shiba_pingtree.jpg" height="100" alt="shiba_pingtree">
-		</span>
-		<p>Hompage : Heyonhak Choi / apdlrm201216@gmail.com
-			<br>DB & Sever : 김재성 / baugh248730@gmail.com
-			<br>&emsp;&emsp;&emsp;&emsp;&ensp; Department of ICT & Automotive Engineering, Hoseo University
-			<br>&emsp;&emsp;&emsp;&emsp;&ensp; No Name Labatory
-		</p>
-	</div>
-</body>
+	</body>
 </html>

@@ -1,10 +1,31 @@
 body{
 	margin: 0px;
 	padding: 0px;
+	font-family: Gulim;
+	background: orange;
 }
-.left .right{
-	width: 100%;
-	padding: 0;
+.nav{
+	width:95%;
+	padding-left: 1%;
+	padding-right: 1%;
+	overflow: hidden;
+	background: white;
+}
+.nav-left{
+	float: left;
+	font-size : 15px;
+	color: #000000;
+	text-align: center;
+	padding: 12px 12px;
+	text-decoration: none;
+	background-color: #BBDEFB;
+}
+.nav-right{
+	float: middle;
+	padding-top:12px;
+	text-align: center;
+	padding: 0px;
+	background-color: #BBDEFB;
 }
 .nav a{
 	float: none;
